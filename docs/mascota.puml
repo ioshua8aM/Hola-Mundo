@@ -1,0 +1,48 @@
+@startuml mascota
+
+class Masctoa
+class Alimento
+class Carne
+class Juguete
+class Pelota
+class Ropa
+class Camisa
+class Connect
+class Juego
+class Tienda 
+class Pocion
+class Jabon
+class Accesorio
+class Collar
+class Habitacion
+class Baño
+class Patio
+class Sala
+class Dormitorio
+class Laboratorio
+class CuartoJuegos
+class Cocina
+
+Alimento --o Masctoa
+Pelota --|> Juguete
+Mascota o-- Juguete
+Carne --|> Alimento
+Camisa --|> Ropa
+Mascota o-- Ropa
+Mascota o-- Juego
+Connect --|> Juego
+Mascota o-- Tienda
+Tienda *-- Pocion
+Tienda *-- Jabon
+Mascota o-- Accesorio
+Collar --|> Accesorio
+Mascota *-- Habitacion
+Cocina --|> Habitacion
+Baño --|> Habitacion
+CuartoJuegos --|> Habitacion
+Laboratorio --|> Habitacion
+Dormitorio --|> Habitacion
+Sala --|> Habitacion
+Patio --|> Habitacion
+
+@enduml

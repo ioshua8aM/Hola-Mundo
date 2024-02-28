@@ -1,42 +1,76 @@
 @startuml mascota
+package Mascota
+{
+    class Mascota
+    {
+        - habitacion:Habitacion
+        + Comer(Alimento)
+        + Usar(Ropa)
+        + Utilizar(Accesorio)
+        + Jugar(Juego)
+        + Jugar(Juguete)
+        + Comprar(Tienda)
+    }
+    class Alimento
+    class Ropa
+    class Juego
+    class Juguete
+    class Accesorio
+}
+     
+     
+package Subclases
+{
+    class Carne
+    class Pelota
+    class Camisa
+    class Connect
+    class Collar 
 
-class Masctoa
-class Alimento
-class Carne
-class Juguete
-class Pelota
-class Ropa
-class Camisa
-class Connect
-class Juego
-class Tienda 
-class Pocion
-class Jabon
-class Accesorio
-class Collar
-class Habitacion
-class Baño
-class Patio
-class Sala
-class Dormitorio
-class Laboratorio
-class CuartoJuegos
-class Cocina
+}
 
-Alimento --o Masctoa
+package Tienda
+{
+    class Tienda
+    {
+        - jabon:Jabon
+        - pocion:Pocion
+    }
+    class Pocion
+    class Jabon
+    
+}
+
+
+
+package Cuartos
+{
+    class Baño
+    class Patio
+    class Sala
+    class Dormitorio
+    class Laboratorio
+    class CuartoJuegos
+    class Cocina
+    class Habitacion
+
+}
+
+
+Alimento "1" --o  "1" Mascota
 Pelota --|> Juguete
-Mascota o-- Juguete
+Mascota "1" o-- "1" Juguete
 Carne --|> Alimento
 Camisa --|> Ropa
-Mascota o-- Ropa
-Mascota o-- Juego
+Mascota "1" o-- "1" Ropa
+Mascota "1" o-- "1" Juego
 Connect --|> Juego
-Mascota o-- Tienda
-Tienda *-- Pocion
-Tienda *-- Jabon
-Mascota o-- Accesorio
+Mascota "1" o-- "1" Tienda
+Tienda "1" *-- "1..*" Pocion
+Tienda "1" *-- "1..*" Jabon
+Mascota "1" o-- "1" Accesorio
 Collar --|> Accesorio
-Mascota *-- Habitacion
+Mascota "1" *-- "7" Habitacion
 Cocina --|> Habitacion
 Baño --|> Habitacion
 CuartoJuegos --|> Habitacion

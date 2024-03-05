@@ -1,5 +1,6 @@
 #pragma once
 #include <Alimento.hpp>
+#include<string>
 
 class Mascota
 {
@@ -7,11 +8,13 @@ private:
     /* data */
     int Energia;
     int Felicidad;
+    std::string nombre;
 public:
-    Mascota(/* args */) 
+    Mascota(std:: string nombre) 
     {
         this -> Energia = 0;
         this -> Felicidad =0;
+        this -> nombre = nombre;
     }
 
     ~Mascota() {}
@@ -35,5 +38,10 @@ public:
     int LeerEnergia ()
     {
         return this -> Energia;
+    }
+
+    std::string LeerNombre()
+    {
+        return this -> nombre;
     }
 };
